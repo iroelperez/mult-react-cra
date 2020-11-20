@@ -1,22 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Game from "./components/Game";
 
 function App() {
+  function handleCompleted(count) {
+    console.log(`Correct count ${count}`);
+  }
+
+  const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+  const count = 5;
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Game count={count} onCompleted={handleCompleted} numbers={numbers} />
       </header>
     </div>
   );
