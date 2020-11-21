@@ -39,7 +39,10 @@ const Problem = (props) => {
       </Card.Header>
       <Card.Body style={{ color: "black" }}>
         <p>
-          <span>{props.a}</span>&nbsp;<span>x</span>&nbsp;<span>{props.b}</span>
+          <span>
+            <b>{props.a}</b>
+          </span>
+          &nbsp;<span>x</span>&nbsp;<span>{props.b}</span>
           &nbsp;<span>=</span>
         </p>
         <ListGroup horizontal>
