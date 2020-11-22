@@ -12,6 +12,12 @@ const Problem = (props) => {
   const solutions = [props.sol1, props.sol2, props.sol3].map(getSolutionFrom);
   const correct = picked === solution;
 
+  const footer = picked
+    ? correct
+      ? "Correct!!"
+      : "Wrong answer!"
+    : "Pick one!";
+
   function getSolutionFrom(number) {
     if (picked == null) {
       return { number, status: "before" };
@@ -42,7 +48,10 @@ const Problem = (props) => {
           <span>
             <b>{props.a}</b>
           </span>
-          &nbsp;<span>x</span>&nbsp;<span>{props.b}</span>
+          &nbsp;<span>x</span>&nbsp;
+          <span>
+            <b>{props.b}</b>
+          </span>
           &nbsp;<span>=</span>
         </p>
         <ListGroup horizontal>
@@ -53,6 +62,9 @@ const Problem = (props) => {
           ))}
         </ListGroup>
       </Card.Body>
+      <Card.Footer style={{ color: "black" }}>
+        <i>{footer}</i>
+      </Card.Footer>
     </Card>
   );
 };

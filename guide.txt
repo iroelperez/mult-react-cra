@@ -1,0 +1,20 @@
+1- create the app
+
+2- make a node js app listening on a configured port using the process.env.PORT variable.
+
+3- created a dockerfile and prepare the image
+
+4- build the image
+  > docker build -t iroelperezcontainers.azurecr.io/mult-app .
+
+5- login into the Azure repository
+  - must get the username and password from Azure container registry
+  > docker login iroelperezcontainers.azurecr.io 
+
+6- push the image built before into the Azure container registry.
+  > docker push iroelperezcontainers.azurecr.io/mult-app:latest
+
+7- In azure create a Website from a conatiner image using the recently added image.
+
+8- Enable continuos integration to the website to allow changes to the image to update the website.
+
